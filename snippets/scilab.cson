@@ -1,0 +1,58 @@
+'.source.scilab':
+  'case':
+    'prefix': 'case'
+    'body': 'case ${1:expression} then\n\t$0'
+  'elseif':
+    'prefix': 'elseif'
+    'body': 'elseif ${1:condition} then\n\t$0'
+  'exec(..)':
+    'prefix': 'exec'
+    'body': 'exec("${0:script.sce}")'
+  'eye(..)':
+    'prefix': 'eye'
+    'body': 'eye(${1:size}, ${2:$1})'
+  'for ... end':
+    'prefix': 'for'
+    'body': 'for ${1:i} = ${2:array}\n\t$0\nend'
+  'function':
+    'prefix': 'function'
+    'body': 'function ${3:output} = ${1:name}($2)\n\t// ${4:Description of $1($2)}\nendfunction'
+  'get_absolute_file_path(..)':
+    'prefix': 'path'
+    'body': 'get_absolute_file_path("${0:`echo "$TM_FILEPATH" | sed -e "s/\'/\'\'/g" -e "s/\\"/\\"\\"/g"`}");'
+  'getd(..)':
+    'prefix': 'getd'
+    'body': 'getd("${0:`echo "$TM_DIRECTORY" | sed -e "s/\'/\'\'/g" -e "s/\\"/\\"\\"/g"`}")'
+  'getf(..)':
+    'prefix': 'getf'
+    'body': 'getf("${0:script.sci}")'
+  'if ... else ... end':
+    'prefix': 'ifelse'
+    'body': 'if ${1:condition} then\n\t$2\nelse\n\t$3\nend'
+  'if ... end':
+    'prefix': 'if'
+    'body': 'if ${1:condition} then\n\t$0\nend'
+  'legend(..)':
+    'prefix': 'legend'
+    'body': 'legend("${1:Graph 1}", "${2:Graph 2}")'
+  'ones(..)':
+    'prefix': 'ones'
+    'body': 'ones(${1:rows}, ${2:cols})'
+  'plot(..)':
+    'prefix': 'plot'
+    'body': 'plot(${1:x}, ${2:y}, ${3:\'-\'})'
+  'plot3d(..)':
+    'prefix': 'plot3d'
+    'body': 'plot3d(${1:x}, ${2:y}, ${3:z})'
+  'select ... case ... end':
+    'prefix': 'select'
+    'body': 'select ${1:variable}\n\tcase ${2:expression} then\n\t\t$0\nend'
+  'while ... end':
+    'prefix': 'while'
+    'body': 'while ${1:condition} then\n\t$0\nend'
+  'xtitle(..)':
+    'prefix': 'title'
+    'body': 'xtitle("${1:Main Title}", "${2:x-axis}", "${3:y-axis}")'
+  'zeros(..)':
+    'prefix': 'zeros'
+    'body': 'zeros(${1:rows}, ${2:cols})'
