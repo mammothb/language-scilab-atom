@@ -1,6 +1,6 @@
 {
   "name": "language-scilab-atom",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "Syntax highlighting and snippets to Scilab files in Atom",
   "repository": {
